@@ -91,8 +91,9 @@ ipython_config.py
 # Remove previous ipynb_checkpoints
 #   git rm -r .ipynb_checkpoints/
 
-# env
+# env等隐私文件
 .env
+certs/
 
 # test、temp、log文件
 test.*
@@ -100,5 +101,5 @@ temp.*
 *.log
 
 # input和output中的所有文件
-/input/*
-/output/*
+input/*
+output/*
