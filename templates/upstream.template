@@ -1,0 +1,18 @@
+# ${SERVICE_NAME} 上游服务配置
+upstream ${UPSTREAM_NAME} {
+    # 负载均衡算法
+    ${LB_METHOD}  # 可替换为least_conn/ip_hash等
+    
+    # 服务器列表（通过envsubst动态生成）
+    ${SERVER_LIST}
+    
+    # 健康检查参数
+    keepalive 32;
+    keepalive_timeout 60s;
+    keepalive_requests 100;
+}
+
+#**变量说明**：
+#- `${UPSTREAM_NAME}`: 上游组名称（如 `backend_servers`）
+#- `${LB_METHOD}`: 负载均衡策略（默认 `round-robin`）
+#- `${SERVER_LIST}`: 服务器列表（如 `server 192.168.1.1:8000;`）
