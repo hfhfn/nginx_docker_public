@@ -108,3 +108,5 @@ docker exec nginx-server nginx -T > nginx_all.conf
 ```bash
 docker exec nginx-server tail -f /var/log/nginx/error.log
 ```
+
+#### services文件夹中增加了upstream_server文件夹，存放单服务的负载均衡配置，暂未使用，而是采用了location.conf统一配置本地服务。
